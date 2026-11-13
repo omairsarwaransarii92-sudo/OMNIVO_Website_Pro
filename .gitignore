@@ -10,7 +10,7 @@ __pycache__/
 !frontend/.env.local.example
 
 backend/.venv/
-backend/db.sqlite3
+# backend/db.sqlite3  # Included so pre-seeded database & initial admin deploy to Vercel
 backend/media/
 backend/staticfiles/
 frontend/node_modules/
