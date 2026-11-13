@@ -40,7 +40,12 @@ export type Project = {
   featured: boolean;
 };
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000/api";
+const defaultApiUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://omnivo-website-pro-7pnj.vercel.app/api"
+    : "http://127.0.0.1:8000/api";
+
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || defaultApiUrl;
 
 async function getJson<T>(path: string): Promise<T | null> {
   try {
