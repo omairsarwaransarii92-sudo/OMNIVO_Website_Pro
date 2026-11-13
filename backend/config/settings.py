@@ -141,5 +141,15 @@ raw_csrf = os.getenv(
     "http://localhost:3000,http://127.0.0.1:3000,https://*.vercel.app",
 )
 CSRF_TRUSTED_ORIGINS = [c.strip() for c in raw_csrf.split(",") if c.strip()]
-if "https://*.vercel.app" not in CSRF_TRUSTED_ORIGINS:
-    CSRF_TRUSTED_ORIGINS.append("https://*.vercel.app")
+for origin in [
+    "https://*.vercel.app",
+    "https://omnivo-website-pro-7pnj.vercel.app",
+    "https://omnivo-website-pro.vercel.app",
+]:
+    if origin not in CSRF_TRUSTED_ORIGINS:
+        CSRF_TRUSTED_ORIGINS.append(origin)
+
+if os.getenv("VERCEL"):
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
