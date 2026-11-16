@@ -41,7 +41,7 @@ export function SiteHeader({ active }: { active: string }) {
   return (
     <header className="site-header">
       <Link className="brand" href="/" aria-label="OMNIVO home">
-        <img className="brand-logo" src="/assets/omnivo-logo.webp" alt="" />
+        <img className="brand-logo" src="/assets/omnivo-logo.webp" alt="OMNIVO" width="38" height="38" />
         <span className="brand-word">OMNIVO</span>
       </Link>
       <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="site-nav" aria-label={menuOpen ? "Close navigation" : "Open navigation"} onClick={() => setMenuOpen((open) => !open)}><span /><span /></button>
@@ -62,7 +62,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-main">
         <Link className="brand" href="/" aria-label="OMNIVO home">
-          <img className="brand-logo" src="/assets/omnivo-logo.webp" alt="" />
+          <img className="brand-logo" src="/assets/omnivo-logo.webp" alt="OMNIVO" width="38" height="38" />
           <span className="brand-word">OMNIVO</span>
         </Link>
         <p>Software for work<br />that matters.</p>
